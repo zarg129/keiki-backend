@@ -1,0 +1,18 @@
+org: zarg129
+app: keiki-backend
+service: keiki-backend
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  getHello:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: GET
+          path: /routes
